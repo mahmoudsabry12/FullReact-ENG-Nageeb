@@ -1,0 +1,30 @@
+.DContainer{
+    display: flex;
+}
+
+
+/*Users Style*/
+
+.User{
+    margin-top: 2rem;
+}
+table{
+    width: 70vw;
+    margin-left:5vw;
+    border-collapse: collapse;
+}
+thead{
+    text-align: center;
+    background-color: rgb(27, 121, 228);
+    color: white;
+    padding: 15px 0;
+}
+th{
+    padding: 12px 0;
+    border: 1px solid black;
+
+}
+td, tr{
+    padding: 10px 5px;
+    border: 1px solid black;
+}

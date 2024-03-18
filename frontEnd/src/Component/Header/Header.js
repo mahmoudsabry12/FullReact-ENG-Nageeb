@@ -13,7 +13,7 @@ export default function Header() {
                 <div className="HLogo"> Sabry</div>
                 <div className='HPages'>
                     <Link to='/'>Home</Link>
-                    <a>About</a>
+                    <Link to='/dashboard'>Dashboard</Link>
                 </div>
                 {!window.localStorage.getItem('email')
                 ? (<div className="HSign">
