@@ -1,0 +1,42 @@
+.Header{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    padding: 15px 0;
+    background-color: rgb(0, 162, 255);
+}
+
+.Header .HContainer{
+display: flex;
+width: 80vw;
+justify-content: space-between;
+align-items: center;
+}
+
+.Header .HLogo{
+    width: 100px;
+    font-size: 32px;
+    color: white;
+}
+.Header .HPages a{
+    margin-left: 20px;
+    font-size: 26px;
+    color: white;
+}
+
+.Header .HSign .btn{
+    width: 100px;
+    padding: 5px 10px;
+    margin-left: 10px;
+    background-color: rgb(0, 162, 255);
+    color: black;
+
+    border: none;
+    font-size: 22px;
+    border-radius: 5px;
+    background-color: white;
+}
+.Header .HSign .btn:hover{
+    /* color: ; */
+    cursor: pointer;
+}

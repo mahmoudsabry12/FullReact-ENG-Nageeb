@@ -60,6 +60,18 @@ const SignUp= () => {
 
           })
      
+          if (res.status === 200) {
+            try {
+              // Store email in local storage (considering potential errors)
+              localStorage.setItem('email', email);
+          
+              // Redirect to the desired path after successful storage
+              window.location.pathname = '/';
+            } catch (error) {
+              // Handle storage errors gracefully (optional)
+              console.error('Error storing email in local storage:', error);
+              // You can display an error message to the user here (if applicable)
+            }}
         }
         } catch (error) {
           setEmailError(error.response.status)
