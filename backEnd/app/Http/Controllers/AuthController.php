@@ -6,13 +6,43 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use App\Traits\HttpResponses;
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     use HttpResponses;
+
+    public function getAll()
+    {
+        $users = User::all();
+        return $users;
+    }
+    public function getbyId($id)
+    {
+        $obj = User::where('id', $id)->get();
+        return $obj;
+    }
+    public function updateUser(StoreUserRequest $request)
+    {
+        $request->validated($request->all());
+        $user = User::where('id', $request->id)->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            // 'password' => $request->password,
+            'password' => Hash::make($request->password)
+        ]);
+        return $this->sucess([
+            'user' => $user,
+        ]);
+    }
+
+    public function remove(Request $request)
+    {
+        DB::table('users')->where('id', '=', $request->user_id)->delete();
+    }
 
     public function login(LoginRequest $request)
     {
